@@ -74,9 +74,10 @@ function checkForMatch() {
         openedCards[1].classList.toggle('match');
         openedCards = [];
     } else {
-        console.log('Not a match!');
-        openCard(openedCards[0]);
-        openCard(openedCards[1]);
-        openedCards = [];
+        setTimeout(() => { // setTimeout (callback function)
+            openCard(openedCards[0]); // calling function
+            openCard(openedCards[1]); // calling function
+            openedCards = [];
+        }, 1000); //designated time (1000ms)
     }
 }
