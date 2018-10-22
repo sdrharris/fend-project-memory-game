@@ -48,7 +48,7 @@ deck.addEventListener('click', event => {
         openCard(clickTarget);
         addOpenCard(clickTarget);
         if (openedCards.length === 2) {
-            console.log('2 cards!');
+           checkForMatch(clickTarget);
         }
     }
 });
@@ -62,4 +62,21 @@ function openCard(card) {
 function addOpenCard(clickTarget) {
     openedCards.push(clickTarget);
     console.log(openedCards);
+}
+
+// Check for match
+function checkForMatch() {
+    if (
+        openedCards[0].firstElementChild.className ===
+        openedCards[1].firstElementChild.className
+    ) {
+        openedCards[0],classList.toggle('match');
+        openedCards[1].classList.toggle('match');
+        openedCards = [];
+    } else {
+        console.log('Not a match!');
+        openCard(openedCards[0]);
+        openCard(openedCards[1]);
+        openedCards = [];
+    }
 }
