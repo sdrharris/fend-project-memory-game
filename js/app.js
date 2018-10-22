@@ -3,6 +3,9 @@
  */
 const deck = document.querySelector('.deck');
 
+// Global Scope
+let openedCards = [];
+
 
 /*
  * Display the cards on the page
@@ -39,8 +42,24 @@ function shuffle(array) {
  */
 // Adding Event Listener
 deck.addEventListener('click', event => {
-    if (clickTarget.classList.contains('card')) {
-        clickTarget.classList.toggle('open');
-        clickTarget.classList.toggle('show');
+    const clickTarget = event.target;
+    if (clickTarget.classList.contains('card') &&
+    openedCards.length < 2) {
+        openCard(clickTarget);
+        addOpenCard(clickTarget);
+        if (openedCards.length === 2) {
+            console.log('2 cards!');
+        }
     }
 });
+
+// Toggling function
+function openCard(card) {
+    card.classList.toggle('open');
+    card.classList.toggle('show');
+}
+
+function addOpenCard(clickTarget) {
+    openedCards.push(clickTarget);
+    console.log(openedCards);
+}
