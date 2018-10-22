@@ -44,7 +44,9 @@ function shuffle(array) {
 deck.addEventListener('click', event => {
     const clickTarget = event.target;
     if (clickTarget.classList.contains('card') &&
-    openedCards.length < 2) {
+    !clickTarget.classList.contains('match') && //bug fix to ensure target does NOT contain the class "match"
+    openedCards.length < 2 &&
+    !openedCards.includes(clickTarget)) { // bug fix to return Boolean value withing the array
         openCard(clickTarget);
         addOpenCard(clickTarget);
         if (openedCards.length === 2) {
