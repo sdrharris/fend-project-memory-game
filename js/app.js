@@ -21,6 +21,7 @@ let time = 0;
 let clockId;
 let matched = 0;
 const TOTAL_PAIRS = 8;
+resetCards();
 
 
 /*
@@ -253,4 +254,12 @@ function gameOver() {
 function replayGame() {
     resetGame();
     toggleModal();
+}
+
+// Resetting the Cards
+function resetCards() {
+    const cards = document.querySelectorAll('.deck li');
+    for (let card of cards) {
+        card.className = 'card';
+    }
 }
