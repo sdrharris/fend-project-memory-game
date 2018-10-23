@@ -105,7 +105,7 @@ function checkForMatch() {
         matched++;
     } if (matched === TOTAL_PAIRS) {
         gameOver();
-    } else { // if not a match
+    } if { // if not a match
         setTimeout(() => { // setTimeout (callback function)
             openCard(openedCards[0]); // calling function
             openCard(openedCards[1]); // calling function
