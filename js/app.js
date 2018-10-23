@@ -161,3 +161,42 @@ function displayTime() {
 function stopClock() {
     clearInterval(clockId);
 }
+
+function toggleModal() {
+    const modal = document.querySelector('.popup-modal__background');
+    modal.classList.toggle('hide');
+}
+toggleModal(); // Open modal
+toggleModal(); // Close modal
+
+// Modal Statistics
+function writeModalStats() {
+    const timeStat = document.querySelector('.popup-time');
+    const clockTime = document.querySelector('.clock').innerHTML;
+    const movesStat = document.querySelector('.popup-moves');
+    const starsStat = document.querySelector('.popup-stars');
+    const stars = getStars();
+
+    timeStat.innerHTML = `Time = ${clockTime}`;
+    movesStat.innerHTML = `Moves = ${moves}`;
+    starsStat.innerHTML = `Stars = ${stars}`;
+}
+
+function getStars() {
+    stars = document.querySelectorAll('.stars li');
+    starCount = 0;
+    for (star of stars) {
+        if (star.style.display !== 'none') {
+            starCount++;
+        }
+    }
+    console.log(starCount);
+    return starCount;
+}
+
+// Modal Buttons
+document.querySelector('.popup_button_close').addEventListener('click', () => {
+    toggleModal();
+});
+
+document.querySelector('.popup_button_replay').addEventListener('click', replayGame);
