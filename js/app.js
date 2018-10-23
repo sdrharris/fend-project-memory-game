@@ -13,9 +13,14 @@ function shuffleDeck() {
 }
 shuffleDeck();
 
-// Global Scope
 const cards = document.querySelectorAll('.card');
-console.log(cards);
+for (card of cards) {
+    card.addEventListener('click', () => {
+        // console.log(cards);
+    });
+}
+
+// Global Scope
 let openedCards = [];
 let moves = 0;
 let clockOff = true;
@@ -148,8 +153,8 @@ hideStar();
 // setInterval for startClock
 function startClock() {
     let clockId = setInterval(() => {
-        displayTime();
         time++;
+        displayTime();
         // console.log(time);
     }, 1000);
 }
@@ -267,8 +272,6 @@ function replayGame() {
     resetGame();
     toggleModal();
 }
-
-document.querySelector('.popup_button-replay').addEventListener('click', replayGame);
 
 // Resetting the Cards
 function resetCards() {
