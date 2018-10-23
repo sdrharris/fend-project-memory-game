@@ -263,3 +263,12 @@ function resetCards() {
         card.className = 'card';
     }
 }
+
+// Modal tests
+time = 121;
+displayTime(); // 2:01
+moves = 16;
+checkScore(); // 2 stars
+
+writeModalStats();
+toggleModal(); // Open modal
