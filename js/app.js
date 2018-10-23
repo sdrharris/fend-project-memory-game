@@ -60,6 +60,7 @@ deck.addEventListener('click', event => {
         if (openedCards.length === 2) {
            checkForMatch(clickTarget);
            addMove();
+           checkScore();
         }
     }
 });
@@ -106,3 +107,23 @@ function addMove() {
     const movesText = document.querySelector('.moves');
     movesText.innerHTML = moves;
 }
+
+// Check Score function
+function checkScore() {
+    if (moves === 16 || moves === 24) {
+        hideStar();
+    }
+}
+
+// Hiding Stars
+function hideStar() {
+    const starList = document.querySelectorAll('.stars li');
+    for (star of starList) {
+        if (star.style.display !== 'none') {
+            star.style.display = 'none';
+            break;
+        }
+    }
+}
+hideStar();
+hideStar();
