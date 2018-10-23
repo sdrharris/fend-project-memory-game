@@ -43,10 +43,7 @@ function shuffle(array) {
 // Adding Event Listener
 deck.addEventListener('click', event => {
     const clickTarget = event.target;
-    if (clickTarget.classList.contains('card') &&
-    !clickTarget.classList.contains('match') && //bug fix to ensure target does NOT contain the class "match"
-    openedCards.length < 2 &&
-    !openedCards.includes(clickTarget)) { // bug fix to return Boolean value withing the array
+    if (isClickValid(clickTarget)) { 
         openCard(clickTarget);
         addOpenCard(clickTarget);
         if (openedCards.length === 2) {
@@ -66,6 +63,13 @@ function addOpenCard(clickTarget) {
     console.log(openedCards);
 }
 
+function isClickValid(clickTarget) {
+    return (
+    clickTarget.classList.contains('card') &&
+    !clickTarget.classList.contains('match') && //bug fix to ensure target does NOT contain the class "match"
+    openedCards.length < 2 &&
+    !openedCards.includes(clickTarget)); // bug fix to return Boolean value withing the array
+}
 // Check for match
 function checkForMatch() {
     if (
