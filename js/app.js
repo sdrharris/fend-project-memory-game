@@ -99,8 +99,8 @@ function checkForMatch() {
         openedCards[0].firstElementChild.className ===
         openedCards[1].firstElementChild.className
     ) {
-        openedCards[0],classList.toggle('match');
-        openedCards[1].classList.toggle('match');
+        openedCards[0].classList.toggle('match');
+        openedCards[1].classList.toggle('match'); // Error fix of dot instead of comma between [0] and classList
         openedCards = [];
         matched++;
     } if (matched === TOTAL_PAIRS) {
