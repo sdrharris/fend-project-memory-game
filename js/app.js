@@ -200,3 +200,39 @@ document.querySelector('.popup_button_close').addEventListener('click', () => {
 });
 
 document.querySelector('.popup_button_replay').addEventListener('click', replayGame);
+
+// Resetting the Game
+function resetGame() {
+    resetClockAndTime();
+    resetMoves();
+    resetStars();
+    shuffleDeck();
+    matched = 0;
+    openedCards = [];
+}
+
+// Resetting ClockAndTime
+function resetClockAndTime() {
+    stopClock();
+    clockOff = true;
+    time = 0;
+    displayTime();
+}
+
+// Resetting Moves
+function resetMoves() {
+    moves = 0;
+    document.querySelector('.moves').innerHTML = moves;
+}
+
+// Reseting Stars
+function resetStars() {
+    stars = 0;
+    const starList = document.querySelectorAll('.stars li');
+    for (star of starList) {
+        star.style.display = 'inline';
+    }
+}
+
+document.querySelector('.restart').addEventListener('click', resetGame);
+document.querySelector('.popup_button_replay').addEventListener('click', resetGame);
