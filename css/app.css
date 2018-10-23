@@ -107,3 +107,68 @@ h1 {
     float: right;
     cursor: pointer;
 }
+
+/*
+* Style for the popup-box
+*/
+.popup-modal__background {
+    position: absolute;
+    z-index: 80;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.438);
+}
+
+.popup-modal__body {
+    position: relative;
+    z-index: 99;
+    width: 400px;
+    top: 50%;
+    left: 50%;
+    background: linear-gradient(160deg, #aa7ecd 0%,  #02ccba 80%);
+    transform: translate(-50%, -50%);
+}
+
+.popup-message {
+    display: center;
+    justify-content: space-between;
+    text-align: center;
+    padding: 0 1.5rem;
+    border-bottom: 1px solid black;
+}
+
+.popup-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid black;
+    background: linear-gradient(160deg, #f5eeff 0%, #aa7ecd 100%);
+}
+
+.popup-buttons {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+    font-size: 1rem;
+    color: lightgrey;
+    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+}
+
+.popup-button {
+    width: 60px;
+    height: 30px;
+}
+
+.popup-button:hover {
+    border: 1px solid black;
+    background: #666666;
+    color: #ffffff;
+}
+
+.hide {
+    display: none;
+}
+
