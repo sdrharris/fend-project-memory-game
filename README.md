@@ -15,6 +15,22 @@ The goal is to match two tiles of the same type, until all of the tiles are matc
 
 When you're ready to play click [here](https://sdrharris.github.io/fend-project-memory-game/).
 
+Technology:
+* HTML
+* CSS
+* JavaScript
+* Image folder
+
+Libraries and dependencies used:
+* [Font-awesome] used to display game cards. 
+* [Bootstrap]
+
+
+Credit:
+* Udacity starter code.
+* JavaScript shuffle function was used from http://stackoverflow.com/a/2450976.
+
+
 ## Contributing
 
 This repository is a basic project memory game for _all_ Udacity students. Please feel free to submit pull requests.
