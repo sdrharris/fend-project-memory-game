@@ -7,14 +7,16 @@
 
 ## Instructions
 
-The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+How to play
+Click on the tiles to turn them over. 
+If you get a match the tiles will stay faced up
+If you don't get a match the tiles will turn back over.
+The goal is to match two tiles of the same type, until all of the tiles are matched. Try matching as many tiles as possible in a minimum amount of moves. There are 16 cards with 8 matching pairs. Remember your cards! You can also keep track of your progress in the score panel.
 
-To get started, open `js/app.js` and start building out the app's functionality
-
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
+When you're ready to play click [here](https://sdrharris.github.io/fend-project-memory-game/).
 
 ## Contributing
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
+This repository is a basic project memory game for _all_ Udacity students. Please feel free to submit pull requests.
 
 For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
