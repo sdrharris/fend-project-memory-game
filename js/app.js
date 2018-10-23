@@ -15,6 +15,7 @@ shuffleDeck();
 
 // Global Scope
 let openedCards = [];
+let moves = 0;
 
 
 /*
@@ -58,6 +59,7 @@ deck.addEventListener('click', event => {
         addOpenCard(clickTarget);
         if (openedCards.length === 2) {
            checkForMatch(clickTarget);
+           addMove();
         }
     }
 });
@@ -96,4 +98,11 @@ function checkForMatch() {
             openedCards = [];
         }, 1000); //designated time (1000ms)
     }
+}
+
+// Adding moves
+function addMove() {
+    moves++;
+    const movesText = document.querySelector('.moves');
+    movesText.innerHTML = moves;
 }
