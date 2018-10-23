@@ -16,6 +16,9 @@ shuffleDeck();
 // Global Scope
 let openedCards = [];
 let moves = 0;
+let clockOff = true;
+let time = 0;
+let clockId;
 
 
 /*
@@ -55,6 +58,10 @@ function shuffle(array) {
 deck.addEventListener('click', event => {
     const clickTarget = event.target;
     if (isClickValid(clickTarget)) { 
+        if (clockOff) {
+            startClock();
+            clockOff = false;
+        }
         openCard(clickTarget);
         addOpenCard(clickTarget);
         if (openedCards.length === 2) {
@@ -127,3 +134,30 @@ function hideStar() {
 }
 hideStar();
 hideStar();
+
+// setInterval for startClock
+function startClock() {
+    let clockId = setInterval(() => {
+        time++;
+        console.log(time);
+    }, 1000);
+}
+startClock();
+
+// Displaying the time
+function displayTime() {
+    const clock = document.querySelector('.clock');
+    const minutes = Math.floor(time / 60);
+    const seconds = time % 60;
+    clock.innerHTML = time;
+    if (seconds < 10) {
+        clock.innerHTML = `${minutes}:0${seconds}`;
+    } else {
+        clock.innerHTML = `${minutes}:${seconds}`;
+    }
+}
+
+// clearInterval to stop the clock
+function stopClock() {
+    clearInterval(clockId);
+}
