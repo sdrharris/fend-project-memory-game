@@ -3,6 +3,16 @@
  */
 const deck = document.querySelector('.deck');
 
+// Shuffling the Cards
+function shuffleDeck() {
+    const cardsToShuffle = Array.from(document.querySelectorAll('.deck li'));
+    const shuffledCards = shuffle(cardsToShuffle);
+    for (card of shuffledCards) { // Adding new decks to the DOM
+        deck.appendChild(card);
+    }
+}
+shuffleDeck();
+
 // Global Scope
 let openedCards = [];
 
