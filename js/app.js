@@ -248,3 +248,9 @@ function gameOver() {
     writeModalStats();
     toggleModal();
 }
+
+// Replaying the game
+function replayGame() {
+    resetGame();
+    toggleModal();
+}
