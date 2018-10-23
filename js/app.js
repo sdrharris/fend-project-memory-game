@@ -19,6 +19,8 @@ let moves = 0;
 let clockOff = true;
 let time = 0;
 let clockId;
+let matched = 0;
+const TOTAL_PAIRS = 8;
 
 
 /*
@@ -99,7 +101,10 @@ function checkForMatch() {
         openedCards[0],classList.toggle('match');
         openedCards[1].classList.toggle('match');
         openedCards = [];
-    } else {
+        matched++;
+    } if (matched === TOTAL_PAIRS) {
+        gameOver();
+    } else { // if not a match
         setTimeout(() => { // setTimeout (callback function)
             openCard(openedCards[0]); // calling function
             openCard(openedCards[1]); // calling function
@@ -236,3 +241,10 @@ function resetStars() {
 
 document.querySelector('.restart').addEventListener('click', resetGame);
 document.querySelector('.popup_button_replay').addEventListener('click', resetGame);
+
+// gameOver
+function gameOver() {
+    stopClock();
+    writeModalStats();
+    toggleModal();
+}
