@@ -68,6 +68,7 @@ function shuffle(array) {
 deck.addEventListener('click', event => {
     const clickTarget = event.target;
     if (isClickValid(clickTarget)) { 
+        
         if (clockOff) {
             startClock();
             clockOff = false;
@@ -107,6 +108,7 @@ function checkForMatch() {
         openedCards[0].classList.toggle('match');
         openedCards[1].classList.toggle('match'); // Error fix of dot instead of comma between [0] and classList
         matched++;
+        console.log(matched);
         openedCards = [];
         if (matched === TOTAL_PAIRS) {
             gameOver();
@@ -117,6 +119,8 @@ function checkForMatch() {
                 openedCards[0].classList.remove('open', 'show');
                 openedCards[1].classList.remove('open', 'show');
             }
+            
+            // isClickValid();
             openedCards = [];
         }, 1000); //designated time (1000ms)
     }
@@ -152,9 +156,10 @@ hideStar();
 
 // setInterval for startClock
 function startClock() {
-    let clockId = setInterval(() => {
-        time++;
+    clockId = setInterval(() => { // Bug fix by changing Let clockId to clockId
         displayTime();
+        time++;
+        
         // console.log(time);
     }, 1000);
 }
@@ -236,8 +241,8 @@ resetGame();
 
 // Resetting ClockAndTime
 function resetClockAndTime() {
-    stopClock();
     clockOff = true;
+    stopClock();
     time = 0;
     displayTime();
 }
