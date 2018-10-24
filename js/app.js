@@ -112,6 +112,7 @@ function checkForMatch() {
         openedCards = [];
         if (matched === TOTAL_PAIRS) {
             gameOver();
+            resetGame(); // To reset the game after all matches
         }
     } else {   // if not a match
         setTimeout(() => { // setTimeout (callback function)
